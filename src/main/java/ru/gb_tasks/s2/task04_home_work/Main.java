@@ -4,9 +4,26 @@ public class Main {
     static class Answer {
         public static StringBuilder answer(String QUERY, String PARAMS) {
             // Напишите свое решение ниже
-            StringBuilder sb = new StringBuilder();
+            StringBuilder queryBuilder = new StringBuilder(QUERY);
+            PARAMS = PARAMS.trim().replaceAll("^\\{", "").replaceAll("\\}$", "");
+            String[] pairs = PARAMS.split(",");
 
-            return null;
+            boolean isFirstParam = true;
+
+            for (String pair : pairs) {
+                String[] keyValue = pair.split(":");
+                String key = keyValue[0].trim().replaceAll("\"", "");
+                String value = keyValue[1].trim().replaceAll("\"", "");
+
+                if (!value.equals("null")) {
+                    if (!isFirstParam) {
+                        queryBuilder.append(" and ");
+                    }
+                    queryBuilder.append(key).append("='").append(value).append("'");
+                    isFirstParam = false;
+                }
+            }
+            return queryBuilder;
         }
     }
 
