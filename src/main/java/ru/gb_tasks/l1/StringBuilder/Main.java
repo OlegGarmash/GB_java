@@ -2,7 +2,7 @@ package ru.gb_tasks.l1.StringBuilder;
 
 public class Main {
     public static void main(String[] args) {
-        int iterations = 1000000;
+        int iterations = 100000;
 
         // Using String
         long startTimeString = System.currentTimeMillis();
