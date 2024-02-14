@@ -1,7 +1,10 @@
 package ru.gb_tasks.s6.PhoneBook;
 
-import java.util.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Scanner;
 
 class PhoneBook {
     private static HashMap<String, ArrayList<Integer>> phoneBook = new HashMap<>();
@@ -126,11 +129,48 @@ public class Main {
         myPhoneBook.add(name4, phone5);
         myPhoneBook.add(name4, phone2);
         myPhoneBook.add(name4, phone3);
-        myPhoneBook.showPhoneBook();
-        myPhoneBook.find();
-        myPhoneBook.deleteNumber();
-        myPhoneBook.deleteContact();
-        myPhoneBook.showPhoneBook();
+
+        boolean b = true;
+        while (b){
+            menu();
+            Scanner scannerMenu = new Scanner(System.in);
+            int menu_list = scannerMenu.nextInt();
+            switch (menu_list){
+                case 1:
+                    System.out.println("Введите имя контакта:");
+                    Scanner scannerName = new Scanner(System.in);
+                    String name = scannerName.nextLine();
+                    System.out.println("Введите номер телефона:");
+                    Scanner scannerNumber = new Scanner(System.in);
+                    int number = scannerNumber.nextInt();
+                    myPhoneBook.add(name, number);
+                    break;
+                case 2:
+                    myPhoneBook.find();
+                    break;
+                case 3:
+                    myPhoneBook.deleteNumber();
+                    break;
+                case 4:
+                    myPhoneBook.deleteContact();
+                    break;
+                case 5:
+                    myPhoneBook.showPhoneBook();
+                    break;
+                case 0:
+                    b = false;
+                    break;
+            }
+        }
     }
 
+    public static void menu() {
+        System.out.println("Выберете пункт меню:\n" +
+                "-> 1. Добавить контакт.\n" +
+                "-> 2. Поиск.\n" +
+                "-> 3. Удалить номер телефон.\n" +
+                "-> 4. Удалить контакт.\n" +
+                "-> 5. Показать адресную книгу.\n" +
+                "-> 0. Выйти из программы.");
+    }
 }
