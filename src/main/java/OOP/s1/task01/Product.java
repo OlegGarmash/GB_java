@@ -13,12 +13,12 @@ abstract public class Product {
         return name;
     }
 
-    public int getCost() {
-        return cost;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getCost() {
+        return cost;
     }
 
     public void setCost(int cost) {
