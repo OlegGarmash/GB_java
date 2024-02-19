@@ -5,25 +5,22 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Product product = new Product("food", 123);
-//        System.out.println("product.getName() = " + product.getName());
-        BottleOfWater bottleOfWater = new BottleOfWater("drink",222, 2);
-        List<Product> productList = new ArrayList<>();
-        VendingMachine vendingMachine = new VendingMachine() {
-            @Override
-            public void initProducts(List<Product> list) {
 
-            }
+        BottleOfWaterVendingMachine machine = new BottleOfWaterVendingMachine();
+        HotDrinkVendingMachine hotMachine = new HotDrinkVendingMachine();
 
-            @Override
-            public List<Product> getProductList() {
-                return null;
-            }
+        machine.addBottleOfWater(new BottleOfWater("Water1", 100, 5));
+        machine.addBottleOfWater(new BottleOfWater("Water2", 20, 1.5));
+        machine.addBottleOfWater(new BottleOfWater("Water3", 300, 2.5));
+        machine.addBottleOfWater(new BottleOfWater("Water4", 40, 4));
 
-            @Override
-            public Product getProduct(String name) {
-                return null;
-            }
-        }
+        hotMachine.addHotDrink(new HotDrink("coffee", 10.5, 100, 90));
+        hotMachine.addHotDrink(new HotDrink("tea", 5, 250, 85));
+        hotMachine.addHotDrink(new HotDrink("iceTea", 15, 150, 15));
+        hotMachine.addHotDrink(new HotDrink("hotMilk", 25, 200, 70));
+
+        System.out.println(machine.getProduct("Water1"));
+        System.out.println(hotMachine.getProduct("iceTea",15,150));
+
     }
 }

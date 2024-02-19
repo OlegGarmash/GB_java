@@ -2,9 +2,9 @@ package OOP.s1.task01;
 
 abstract public class Product {
     private String name;
-    private int cost;
+    private double cost;
 
-    public Product(String name, int cost) {
+    public Product(String name, double cost) {
         this.name = name;
         this.cost = cost;
     }
@@ -17,11 +17,19 @@ abstract public class Product {
         this.name = name;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", cost=" + cost +
+                '}';
     }
 }
