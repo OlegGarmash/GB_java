@@ -1,4 +1,4 @@
-package OOP.s3.task02;
+package OOP.s3.task01_Iterator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,12 +14,20 @@ public class Main {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+
         System.out.println("-----------");
+
         iterator = new StudentGroupIterator(studentGroup);
+
         while (iterator.hasNext()) {
-//            Student student = iterator.next();
-            if (iterator.next().studentId == 1)
+            Student student = iterator.next();
+            if (student.studentId == 1) {
                 iterator.remove();
+            }
+        }
+
+        iterator.index = 0;
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }

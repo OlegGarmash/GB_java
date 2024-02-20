@@ -1,28 +1,27 @@
-package OOP.s3.task02;
+package OOP.s3.task02_Iterable;
 
 import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroupIterator implements Iterator<Student> {
     private List<Student> studentList;
-    private int index;
+    int index = 0;
 
-    public StudentGroupIterator(StudentGroup studentGroup) {
+    public StudentGroupIterator(StudentGroup studentGroup){
         this.studentList = studentGroup.studentList;
     }
 
-    public boolean hasNext() {
+    public boolean hasNext(){
         return index < studentList.size();
     }
-
-    public Student next() {
+    public Student next(){
         if (!hasNext())
             return null;
         return studentList.get(index++);
     }
 
-    public void remove() {
-        studentList.remove(index);
+    public void remove(){
+        studentList.remove(--index);
         index = 0;
     }
 }

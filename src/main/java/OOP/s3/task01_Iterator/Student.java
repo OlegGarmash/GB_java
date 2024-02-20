@@ -1,6 +1,6 @@
-package OOP.s3.task04;
+package OOP.s3.task01_Iterator;
 
-public class Student implements {
+public class Student {
     public int studentId;
 
     private String firstName;
@@ -22,9 +22,5 @@ public class Student implements {
                 ", secondName='" + secondName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
-    }
-    @Override
-    public int compareTo(Student o){
-        return this.studentId.compareTo(o.studentId);
     }
 }

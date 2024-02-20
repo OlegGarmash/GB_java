@@ -1,4 +1,4 @@
-package OOP.s3.task01;
+package OOP.s3.task01_Iterator;
 
 import java.util.List;
 

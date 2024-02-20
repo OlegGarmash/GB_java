@@ -1,6 +1,4 @@
-package OOP.s3.task01;
-
-import OOP.s1.task01.BottleOfWater;
+package OOP.s3.task02_Iterable;
 
 public class Student {
     public int studentId;

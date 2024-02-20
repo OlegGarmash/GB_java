@@ -1,11 +1,11 @@
-package OOP.s3.task01;
+package OOP.s3.task01_Iterator;
 
 import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroupIterator implements Iterator<Student> {
     private List<Student> studentList;
-    private int index;
+    int index = 0;
 
     public StudentGroupIterator(StudentGroup studentGroup){
         this.studentList = studentGroup.studentList;
@@ -21,7 +21,7 @@ public class StudentGroupIterator implements Iterator<Student> {
     }
 
     public void remove(){
-        studentList.remove(index);
+        studentList.remove(--index);
         index = 0;
     }
 }
