@@ -1,4 +1,4 @@
-package OOP.s3.task02_Iterable;
+package OOP.s3.task04_Comparator;
 
 import java.util.Iterator;
 import java.util.List;
