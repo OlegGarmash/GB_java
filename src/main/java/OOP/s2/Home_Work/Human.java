@@ -16,6 +16,11 @@ public class Human extends Actor {
     }
 
     @Override
+    public void setInQueue(boolean inQueue) {
+
+    }
+
+    @Override
     public boolean isMakeOrder() {
         return makeOrder;
     }
@@ -23,5 +28,10 @@ public class Human extends Actor {
     @Override
     public boolean isTakeOrder() {
         return takeOrder;
+    }
+
+    @Override
+    public boolean isInQueue() {
+        return false;
     }
 }

@@ -1,7 +1,7 @@
 package OOP.s2.Home_Work;
 
 public interface QueueBehavior {
-    void takeInQueue(Actor actor);
+    void takeInQueue();
 
     void takeOrders();
 
@@ -9,5 +9,5 @@ public interface QueueBehavior {
 
     void releaseFromQueue();
 
-    void cancelOrder(Actor actor);
+//    void cancelOrder(Actor actor);
 }

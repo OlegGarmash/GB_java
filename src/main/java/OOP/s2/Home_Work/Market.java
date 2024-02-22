@@ -16,7 +16,7 @@ public class Market implements MarketBehavior, QueueBehavior {
 
     @Override
     public void actorsInMarket() {
-        for (Actor s : marketQueue) {
+        for (Actor s : queue) {
             System.out.println(s.getName());
         }
     }
@@ -37,23 +37,27 @@ public class Market implements MarketBehavior, QueueBehavior {
         releaseFromQueue();
     }
 
+    public void isInQueue(Actor actor) {
+
+    }
+
     @Override
-    public void takeInQueue(Actor actor) {
-        boolean bool = false;
-        for (Actor s : marketQueue) {
-            if (s.getName().equals(actor.getName())) {
+    public void takeInQueue() {
+        System.out.println("Введите имя покупателя, которого хотите поставить в очередь:");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        for (Actor actor : queue) {
+            if (actor.getName().equals(name)){
                 System.out.println(actor.getName() + " встал в очередь");
-                marketQueue.remove(actor);
-                queue.add(actor);
-                bool = true;
+                actor.setInQueue(true);
             }
         }
-        if (!bool)
-            System.out.println("Покупатель с таким именем не найден!");
     }
 
     @Override
     public void takeOrders() {
+//        queue.getFirst().setTakeOrder(true);
+//        System.out.println(queue.getFirst().getName() + " сделал заказ");
         for (Actor actor : queue) {
             if (!actor.isMakeOrder()) {
                 actor.setMakeOrder(true);
@@ -82,13 +86,5 @@ public class Market implements MarketBehavior, QueueBehavior {
             }
         }
         releaseFromMarket(releasedActors);
-    }
-
-    @Override
-    public void cancelOrder(Actor actor) {
-        marketQueue.remove(actor);
-        for (Actor s : marketQueue) {
-            System.out.println(s.getName());
-        }
     }
 }
