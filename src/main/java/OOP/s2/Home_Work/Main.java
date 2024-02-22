@@ -22,7 +22,7 @@ public class Main {
                     break;
                 case 3:
                     market.takeInQueue();
-                break;
+                    break;
                 case 4:
                     market.takeOrders();
                     break;

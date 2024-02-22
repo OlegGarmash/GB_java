@@ -46,7 +46,7 @@ public class Market implements MarketBehavior, QueueBehavior {
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         for (Actor actor : queue) {
-            if (actor.getName().equals(name)){
+            if (actor.getName().equals(name)) {
                 System.out.println(actor.getName() + " встал в очередь");
                 actor.setInQueue(true);
             }
