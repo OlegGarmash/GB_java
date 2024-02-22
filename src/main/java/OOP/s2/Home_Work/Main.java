@@ -24,10 +24,10 @@ public class Main {
                     market.takeInQueue();
                 break;
                 case 4:
-                    market.update();
+                    market.takeOrders();
                     break;
                 case 5:
-                    market.takeOrders();
+                    market.update();
                     break;
                 case 0:
                     b = false;
@@ -41,10 +41,10 @@ public class Main {
     static void main_menu() {
         System.out.println("Выберете пункт меню:\n" +
                 "-> 1. Добавить покупателя.\n" +
-                "-> 2. Покупатели без очереди.\n" +
+                "-> 2. Список покупателей в магазине.\n" +
                 "-> 3. Поставить покупателя в очередь.\n" +
-                "-> 4. Выполнить заказ.\n" +
-                "-> 5. Забрать заказ.\n" +
+                "-> 4. Создать заказ.\n" +
+                "-> 5. Забрать заказ и покуинуть магазин.\n" +
                 "-> 0. Выйти из программы.");
     }
 }

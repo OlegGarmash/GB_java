@@ -32,6 +32,6 @@ public class Human extends Actor {
 
     @Override
     public boolean isInQueue() {
-        return false;
+        return inQueue;
     }
 }
