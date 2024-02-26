@@ -5,7 +5,7 @@ public class Student extends User implements Comparable<Student>{
 
     public Student(String firstName, String secondName, String lastName) {
         super(firstName, secondName, lastName);
-        this.studentId;
+//        this.studentId;
     }
 
 
