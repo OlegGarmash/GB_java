@@ -1,4 +1,4 @@
-package OOP.s4.task01;
+package OOP.s4.task02_HomeWork;
 
 public class Student extends User implements Comparable<Student>{
     private Long studentId;
@@ -26,6 +26,5 @@ public class Student extends User implements Comparable<Student>{
             return -1;
         else
             return 0;
-        //return this.studentId.compareTo(o.studentId);
     }
 }
