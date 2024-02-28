@@ -2,7 +2,7 @@ package OOP.s3.task05_Home_Work;
 
 import java.util.Comparator;
 
-public class StudentComporator implements Comparator<Student>{
+public class StudentComporator implements Comparator<Student> {
 
     @Override
     public int compare(Student o1, Student o2) {
@@ -11,7 +11,7 @@ public class StudentComporator implements Comparator<Student>{
             resultOfComparing = o1.firstName.compareTo(o2.firstName);
             if (resultOfComparing == 0) {
                 resultOfComparing = o1.lastName.compareTo(o2.lastName);
-                if (resultOfComparing == 0){
+                if (resultOfComparing == 0) {
                     return o1.studentId.compareTo(o2.studentId);
                 } else {
                     return resultOfComparing;

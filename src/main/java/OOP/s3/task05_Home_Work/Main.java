@@ -1,29 +1,35 @@
 package OOP.s3.task05_Home_Work;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         StudentGroup studentGroup = new StudentGroup(new ArrayList<>());
-        studentGroup.studentList.add(new Student(2L, "German", "Stanislavovich", "Puzikov"));
-        studentGroup.studentList.add(new Student(1L, "Artyom", "Ivanovich", "Garmash"));
-        studentGroup.studentList.add(new Student(3L, "Jhon", "Man", "Weak"));
-        studentGroup.studentList.add(new Student(5L, "Jhon", "Man", "Weak"));
-        studentGroup.studentList.add(new Student(4L, "Jhon", "Man", "Weak"));
+        studentGroup.getStudentList().add(new Student(2L, "German", "Stanislavovich", "Puzikov"));
+        studentGroup.getStudentList().add(new Student(1L, "Artyom", "Ivanovich", "Garmash"));
+        studentGroup.getStudentList().add(new Student(3L, "Jhon", "Man", "Weak"));
+        studentGroup.getStudentList().add(new Student(5L, "Jhon", "Man", "Weak"));
+        studentGroup.getStudentList().add(new Student(4L, "Jhon", "Man", "Weak"));
 
-        System.out.println(studentGroup.studentList.get(2).compareTo(studentGroup.studentList.get(1)));
+        StudentGroup studentGroup2 = new StudentGroup(new ArrayList<>());
+        studentGroup2.getStudentList().add(new Student(2L, "German", "Stanislavovich", "Puzikov"));
+        studentGroup2.getStudentList().add(new Student(1L, "Artyom", "Ivanovich", "Garmash"));
+        studentGroup2.getStudentList().add(new Student(3L, "Jhon", "Man", "Weak"));
+        studentGroup2.getStudentList().add(new Student(5L, "Jhon", "Man", "Weak"));
 
-        StudentGroupServise servise = new StudentGroupServise(studentGroup);
-        System.out.println("----");
-        servise.soutList(studentGroup.studentList);
+        StudentGroup studentGroup3 = new StudentGroup(new ArrayList<>());
+        studentGroup3.getStudentList().add(new Student(2L, "German", "Stanislavovich", "Puzikov"));
+        studentGroup3.getStudentList().add(new Student(1L, "Artyom", "Ivanovich", "Garmash"));
+        studentGroup3.getStudentList().add(new Student(3L, "Jhon", "Man", "Weak"));
 
-        System.out.println("----");
-        servise.soutList(servise.getSortedStudentGroup());
+        List<StudentGroup> studentGroupList = new ArrayList<>();
+        studentGroupList.add(studentGroup);
+        studentGroupList.add(studentGroup2);
+        studentGroupList.add(studentGroup3);
 
-        System.out.println("----");
-        servise.soutList(studentGroup.studentList);
-
-        System.out.println("----");
-        servise.soutList(servise.getSortedStudentGroupFIO());
+        Stream stream = new Stream(studentGroupList);
+        StreamService sortedStream = new StreamService(stream);
+        sortedStream.soutList(sortedStream.getSortedStream());
     }
 }

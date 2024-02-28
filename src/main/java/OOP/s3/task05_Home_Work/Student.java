@@ -1,11 +1,12 @@
 package OOP.s3.task05_Home_Work;
 
-public class Student implements Comparable<Student>{
+public class Student implements Comparable<Student> {
     public Long studentId;
     protected String firstName;
     protected String secondName;
     protected String lastName;
-    public Student(Long studentId, String firstName, String secondName, String lastName){
+
+    public Student(Long studentId, String firstName, String secondName, String lastName) {
         this.studentId = studentId;
         this.firstName = firstName;
         this.secondName = secondName;
@@ -14,12 +15,11 @@ public class Student implements Comparable<Student>{
 
     @Override
     public String toString() {
-        return "Student{" +
-                "studentId=" + studentId +
-                ", firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        return "StudentID" +
+                studentId +
+                ": " + firstName +
+                " " + secondName +
+                " " + lastName;
     }
 
     @Override

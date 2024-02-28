@@ -7,20 +7,21 @@ public class StudentGroupIterator implements Iterator<Student> {
     private List<Student> studentList;
     int index = 0;
 
-    public StudentGroupIterator(StudentGroup studentGroup){
-        this.studentList = studentGroup.studentList;
+    public StudentGroupIterator(StudentGroup studentGroup) {
+        this.studentList = studentGroup.getStudentList();
     }
 
-    public boolean hasNext(){
+    public boolean hasNext() {
         return index < studentList.size();
     }
-    public Student next(){
+
+    public Student next() {
         if (!hasNext())
             return null;
         return studentList.get(index++);
     }
 
-    public void remove(){
+    public void remove() {
         studentList.remove(--index);
         index = 0;
     }

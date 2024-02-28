@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class StudentGroupServise {
+public class StudentGroupService {
     StudentGroup studentGroup;
 
-    public StudentGroupServise(StudentGroup studentGroup){
+    public StudentGroupService(StudentGroup studentGroup){
         this.studentGroup = studentGroup;
     }
     public List<Student> getSortedStudentGroup(){

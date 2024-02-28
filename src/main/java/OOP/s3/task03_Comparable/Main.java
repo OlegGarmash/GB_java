@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println(studentGroup.studentList.get(2).compareTo(studentGroup.studentList.get(1)));
 
-        StudentGroupServise servise = new StudentGroupServise(studentGroup);
+        StudentGroupService servise = new StudentGroupService(studentGroup);
         System.out.println("----");
         servise.soutList(studentGroup.studentList);
 
