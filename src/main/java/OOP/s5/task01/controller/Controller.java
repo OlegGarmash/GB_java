@@ -6,8 +6,8 @@ import OOP.s5.task01.service.DataService;
 import OOP.s5.task01.view.StudentView;
 
 public class Controller {
-    private DataService dataService = new DataService();
-    private StudentView studentView = new StudentView();
+    private final DataService dataService = new DataService();
+    private final StudentView studentView = new StudentView();
 
     public void createStudent(String firstName, String secondName, String lastName, Integer dateOfBirth) {
         dataService.create(firstName, secondName, lastName, dateOfBirth, Type.STUDENT);
