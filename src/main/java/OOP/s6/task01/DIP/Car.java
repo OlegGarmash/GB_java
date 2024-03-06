@@ -7,7 +7,11 @@ public class Car {
         this.engine = engine;
     }
 
-    public void start(){
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void start() {
         engine.start();
     }
 }

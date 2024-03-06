@@ -1,14 +1,22 @@
 package OOP.s6.task01.LSP;
 
 public class Square extends QuadRangle {
-    private int len;
+    private int side;
 
-    public Square(int len) {
-        this.len = len;
+    public int getSide() {
+        return side;
+    }
+
+    public void setSide(int side) {
+        this.side = side;
+    }
+
+    public Square(int side) {
+        this.side = side;
     }
 
     @Override
     public int area() {
-        return len * len;
+        return side * side;
     }
 }
