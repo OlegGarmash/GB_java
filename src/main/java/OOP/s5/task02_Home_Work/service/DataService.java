@@ -11,18 +11,23 @@ import java.util.List;
 public class DataService {
 
     private List<User> users = new ArrayList<>();
+//    public DataService(){
+//        this.users = new ArrayList<>();
+//    }
 
     public void create(String firstName, String secondName, String lastName, Integer dateOfBirth, Type type) {
         int id = getFreeId(type);
         if (type == Type.STUDENT) {
-            users.add(new Student(firstName, secondName, lastName, dateOfBirth, id));
+            Student student = new Student(firstName, secondName, lastName, dateOfBirth, id);
+            users.add(student);
         } else if (type == Type.TEACHER) {
-            users.add(new Teacher(firstName, secondName, lastName, dateOfBirth, id));
+            Teacher teacher = new Teacher(firstName, secondName, lastName, dateOfBirth, id);
+            users.add(teacher);
         }
     }
 
     private int getFreeId(Type type) {
-        boolean isStudent = type == Type.STUDENT;
+        boolean isStudent = Type.STUDENT == type;
         int lastId = 1;
         for (User user : users) {
             if (user instanceof Student && isStudent) {
@@ -46,5 +51,34 @@ public class DataService {
             }
         }
         return studentList;
+    }
+    public List<Student> getStudentListById(List<Integer> id){
+        List<Student> students = new ArrayList<>();
+        for (Student student : getStudentList()){
+            for (Integer i : id) {
+                if (student.getStudentId().equals(i)){
+                    students.add(student);
+                }
+            }
+        }
+        return students;
+    }
+
+    public List<Teacher> getTeacherList(){
+        List<Teacher> studentList = new ArrayList<>();
+        for (User user : users){
+            if (user instanceof Teacher){
+                studentList.add((Teacher) user);
+            }
+        }
+        return studentList;
+    }
+    public Teacher getTeacherById(Integer teacherId, List<Teacher> teachers){
+        for (Teacher teacher : teachers){
+            if (teacherId.equals(teacher.getTeacherId())){
+                return teacher;
+            }
+        }
+        return null;
     }
 }

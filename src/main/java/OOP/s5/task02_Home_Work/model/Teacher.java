@@ -13,9 +13,9 @@ public class Teacher extends User {
         return teacherId;
     }
 
-//    public void setTeacherId(Integer teacherId) {
-//        this.teacherId = teacherId;
-//    }
+    public void setTeacherId(int teacherId) {
+        this.teacherId = teacherId;
+    }
 
     @Override
     public String toString() {

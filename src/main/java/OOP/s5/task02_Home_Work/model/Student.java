@@ -13,9 +13,9 @@ public class Student extends User {
         return studentId;
     }
 
-//    public void setStudentId(Integer studentId) {
-//        this.studentId = studentId;
-//    }
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
+    }
 
     @Override
     public String toString() {
