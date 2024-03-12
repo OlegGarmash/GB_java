@@ -2,31 +2,25 @@ package Tester.s1.task02;
 
 public class Main {
     public static void main(String[] args) {
-        int[][] arr = {
-                {0, 1, 1, 0, 1},
-                {0, 1, 1, 0, 1},
-                {0, 1, 1, 0, 1},
-                {0, 1, 1, 0, 1},
-                {0, 1, 1, 0, 1},
-        };
-        System.out.println(sumOfMatrixItems(arr));
+        System.out.println(checkArrayLength(new int[]{1, 2, 3}, 2,2));
     }
 
-    public static int sumOfMatrixItems(int[][] arr) {
-        int height = arr.length;
-        int sum = 0;
-        for (int[] ints : arr) {
-            if (ints.length != height)
-                throw new RuntimeException("Array isn't squared");
-            for (int anInt : ints) {
-                if (anInt == 0 || anInt == 1) {
-                    sum += anInt;
-                } else {
-                    throw new RuntimeException("Unacceptable value");
-                }
-            }
+    public static int checkArrayLength(int[] arr, int min, int findNum) {
+        if (arr == null) {
+            System.out.println("Array can't be null");
+            return -3;
         }
-        return sum;
+        else if (arr.length < min) {
+            System.out.println("Length of the array is less then min");
+            return -1;
+        }
+        else {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == findNum)
+                    return i;
+            }
+            System.out.println("The number isn't in the array");
+            return -2;
+        }
     }
-
 }
