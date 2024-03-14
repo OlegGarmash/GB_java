@@ -8,7 +8,7 @@ public class Main {
         int d;
 
         if (args.length == 0) {
-            intArray = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+            intArray = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 9};
             d = 0; // По умолчанию используем 0, если аргумент не передан
         } else {
             intArray = Arrays.stream(args[0].split(" ")).mapToInt(Integer::parseInt).toArray();
@@ -23,14 +23,23 @@ public class Main {
 
         public static double expr(int[] intArray, int d) {
             // Введите свое решение ниже
-//            try{
-                return (double) intArray[8] / d;
-//            } catch (ArithmeticException e){
-//                throw new ArithmeticException("test");
-//            } catch (ArrayIndexOutOfBoundsException e){
-//                throw new ArrayIndexOutOfBoundsException("test2");
+//            if (d == 0){
+//                System.out.println("It's not possible to evaluate the expression - intArray[8] / d as d = 0.");
+//                return d.NaN;
 //            }
-
+            try {
+                double result = intArray[8] / d;
+                System.out.printf("intArray[8] / d = %s / %s = %s\n", intArray[8], d, result);
+                return result;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("test");
+                return Double.NaN;
+//                throw new ArrayIndexOutOfBoundsException("It's not possible to evaluate the expression - intArray[8] / d as there is no 8th element in the given array.");
+            } catch (ArithmeticException e) {
+                System.out.println("test2");
+                return Double.NaN;
+//                throw new ArithmeticException("It's not possible to evaluate the expression - intArray[8] / d as d = 0.");
+            }
         }
     }
 }
