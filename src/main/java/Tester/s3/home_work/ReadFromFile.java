@@ -1,27 +1,24 @@
 package Tester.s3.home_work;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class ReadFromFile {
-    public void readFromFile(String path){
-        BufferedReader br = null;
-        String line;
+    public void readFromFile() {
+        System.out.print("Введите имя файла:\n-> ");
+        Scanner scanner = new Scanner(System.in);
+        String path = scanner.nextLine();
         try {
-            br = new BufferedReader(new FileReader(path));
-            while ((line = br.readLine()) != null){
+            BufferedReader br = new BufferedReader(new FileReader(path));
+            String line;
+            while ((line = br.readLine()) != null) {
                 System.out.println(line);
             }
+            br.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            try {
-                br.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            e.printStackTrace();
         }
     }
 }

@@ -1,18 +1,17 @@
 package Tester.s3.home_work;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 
 public class WriteToFile {
 
-    public void writeToFile(String path, Human human) {
+    public void writeToFile(String path, UserData data) {
         FileWriter fw = null;
         try {
             fw = new FileWriter(path, true);
-            fw.write(String.valueOf(human));
+            fw.write(String.valueOf(data));
             fw.flush();
+            System.out.printf("Файл с именем [%s] успешно сохранён.\n\n", data.getSurName());
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
