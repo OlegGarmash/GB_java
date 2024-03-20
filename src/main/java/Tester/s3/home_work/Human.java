@@ -18,16 +18,16 @@ public class Human {
         this.gender = gender;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Name:\t\t\t" + surName + ' ' + firstName + ' ' + lastName + '\n' +
-//                "DateOfBirth:\t" + dateOfBirth + '\n' +
-//                "PhoneNumber:\t" + phoneNumber + '\n' +
-//                "Gender:\t\t\t" + gender + '\n';
-//    }
-
     @Override
     public String toString() {
-        return surName + " " + firstName + " " + lastName + " " + dateOfBirth + " " + phoneNumber + " " + gender;
+        return "Name:\t\t\t" + surName + ' ' + firstName + ' ' + lastName + '\n' +
+                "DateOfBirth:\t" + dateOfBirth + '\n' +
+                "PhoneNumber:\t" + phoneNumber + '\n' +
+                "Gender:\t\t\t" + gender + '\n'+'\n';
     }
+
+//    @Override
+//    public String toString() {
+//        return surName + " " + firstName + " " + lastName + " " + dateOfBirth + " " + phoneNumber + " " + gender + '\n';
+//    }
 }
