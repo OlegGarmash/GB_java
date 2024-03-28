@@ -46,7 +46,7 @@ public class main {
         System.out.println(c);
 
         for (Map.Entry<String, Integer> elem : map.entrySet()) {
-            System.out.println("Фрукт " + '\"' + elem.getKey() + '\"' + " встретился " + elem.getValue() + " раз.");
+            System.out.println("Продукт " + '\"' + elem.getKey() + '\"' + " встретился " + elem.getValue() + " раз.");
         }
     }
 
