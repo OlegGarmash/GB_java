@@ -17,7 +17,7 @@ public class Main {
             }
         }
         for (Map.Entry<Character, Integer> elem : mapCh.entrySet()) {
-            System.out.println(elem.getKey() + " встретился : " + elem.getValue() + " раз.");
+            System.out.println("Символ " + '\'' + elem.getKey() + '\'' + " встретился : " + elem.getValue() + " раз.");
         }
         System.out.println("mapCh = " + mapCh);
     }

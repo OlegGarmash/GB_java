@@ -16,8 +16,8 @@ public class Main {
             } else {
                 return true;
             }
-//            dubs.putIfAbsent(elem, 0);
-//            dubs.put(elem, dubs.get(elem)+1);
+            dubs.putIfAbsent(elem, 0);
+            dubs.put(elem, dubs.get(elem)+1);
 
         }return false;
 //        System.out.println("dubs = " + dubs);
