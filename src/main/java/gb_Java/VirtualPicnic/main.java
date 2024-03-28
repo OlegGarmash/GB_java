@@ -9,7 +9,7 @@ public class main {
     public static void main(String[] args) {
 
         String path = "src\\main\\java\\gb_Java\\VirtualPicnic\\input.txt";
-        TreeMap<String, Integer> map = new TreeMap<String, Integer>();
+        TreeMap<String, Integer> map = new TreeMap<>();
 
         String[] str = ReadFile(path).split(" ");
         Set<String> set = new TreeSet<>(Arrays.asList(str));
@@ -21,22 +21,22 @@ public class main {
 
         int c = 0;
         for (String string : str) {
-            if (!string.isEmpty()){
+            if (!string.isEmpty()) {
                 c++;
             }
         }
 
         for (String string : set) {
             int count = 1;
-            if (!string.isEmpty()){
+            if (!string.isEmpty()) {
                 for (String s : str) {
-                    if (string.equals(s)){
+                    if (string.equals(s)) {
                         map.put(string, count);
                         count++;
                     }
                 }
             }
-            if (maxLength < string.length()){
+            if (maxLength < string.length()) {
                 maxLength = string.length();
                 maxWord = string;
             }
@@ -45,14 +45,12 @@ public class main {
         System.out.println("Самое длинное слово - " + '\"' + maxWord + '\"' + " состоит из " + maxLength + " букв.\n");
         System.out.println(c);
 
-
         for (Map.Entry<String, Integer> elem : map.entrySet()) {
             System.out.println("Фрукт " + '\"' + elem.getKey() + '\"' + " встретился " + elem.getValue() + " раз.");
         }
     }
 
     public static String ReadFile(String path) {
-
         BufferedReader br = null;
         try {
             br = new BufferedReader(new FileReader(path));
@@ -63,6 +61,4 @@ public class main {
             throw new RuntimeException(e);
         }
     }
-
-
 }
