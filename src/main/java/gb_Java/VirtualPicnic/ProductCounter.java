@@ -35,7 +35,6 @@ public class ProductCounter {
                 counterList.add(count);
             }
         }
-        Set<Integer> counterSetList = new TreeSet<>(counterList);
-        return counterSetList;
+        return new TreeSet<>(counterList);
     }
 }
