@@ -3,8 +3,8 @@ package gb_Java.VirtualPicnic;
 import java.util.*;
 
 public class ProductCounter {
-    private TreeMap<String, Integer> map = new TreeMap<>();
-    private TreeMap<Integer, ArrayList<String>> counterMap = new TreeMap<>();
+    private final TreeMap<String, Integer> map = new TreeMap<>();
+    private final TreeMap<Integer, ArrayList<String>> counterMap = new TreeMap<>();
 
     public void printer(Set<String> set, String[] str) {
         for (Integer i : counterSet(set, str)) {
